@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Add Record</title>
+	<!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+<body>
+	<form method="post" action="{{ url_for('addrecord')}}">
+  <div class="form-group">
+    <label for="exampleInputEmail1">ID</label>
+    <input type="text" class="form-control" name="id">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Book Name</label>
+    <input type="text" class="form-control" name="b_name">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Book Author</label>
+    <input type="text" class="form-control" name="b_author">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Published year</label>
+    <input type="text" class="form-control" name="b_year">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">ISBN</label>
+    <input type="text" class="form-control" name="b_isbn">
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+</body>
+</html>

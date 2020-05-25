@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home Page</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+	<h2>My Home Page</h2>
+	<a href="{{ url_for('home') }}"><button>Home</button></a>
+	<a href="{{ url_for('blogs') }}"><button>Blogs</button></a>
+	<a href="{{ url_for('jobs') }}"><button>Jobs</button></a>
+	<br>
+	{{allusers}}
+	<br>
+	<ul>
+		{% for user in allusers %}
+			<li>{{user}}</li>
+		<br>
+	{% endfor %}
+	</ul>
+	
+</body>
+</html>

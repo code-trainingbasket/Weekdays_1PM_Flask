@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Testing Home page</title>
+	<!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+<body>
+	<center>
+		<h1>My Home Page</h1>
+		<h2>My Second Heading</h2>
+		<h3>My Third heading</h3>
+		<h4>My Fourth heading</h4>
+		<a href="{{ url_for('home')}}" class="btn btn-secondary my-2">Home</a>
+		<a href="{{ url_for('jobs')}}" class="btn btn-secondary my-2">Jobs</a>
+	</center>
+
+	<strong>
+		{{users}}
+	</strong>
+	
+	<br>
+	{% for user in users %}
+		{% if user == "Rishabh" %}
+			<hr>
+			<h1>{{user|upper}}</h1>
+			<hr>
+		{% else %}
+		<hr>
+		{{user}}
+		<hr>
+		{% endif %}
+	{% endfor %}
+	<hr>
+	<center>
+	<table border="2">
+		<tr>
+			<th>Author</th>
+			<th>Blogs</th>
+		</tr>
+		{% for author,blog in allblogs.items() %}
+		<tr>
+			<td>{{author}}</td>
+			<td>{{blog}}</td>
+		</tr>
+		{% endfor %}
+	</table>
+	</center>
+</body>
+</html>

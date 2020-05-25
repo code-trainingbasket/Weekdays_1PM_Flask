@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Blog Page</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+	<h1>My Blog Page</h1>
+	<a href="{{ url_for('home') }}"><button>Home</button></a>
+	<a href="{{ url_for('blogs') }}"><button>Blogs</button></a>
+	<br>
+	{% for user, blogs in allblogs.items() %}
+		<ul>
+			{% if user == 'Rishabh' %}
+			<li>
+				{{user|title}}
+			</li>
+			{% else %}
+			<li>
+				{{user}}
+			</li>
+			{% endif %}
+		</ul>
+		<table border="2">
+			<tr>
+				<th>Blog Field</th>
+			</tr>
+			{% for blog in blogs %}
+			<tr>
+				<td>{{blog}}</td>
+			</tr>
+			{% endfor %}
+		</table>
+	{% endfor %}
+</body>
+</html>
