@@ -38,6 +38,15 @@ def jobs():
 		rows = cur.fetchall()
 	return render_template('jobs.html',rows = rows)
 
+@app.route('/specific/<int:b_id>',methods = ['GET'])
+def specific(b_id):
+	with sqlite3.connect('books.db') as conn:
+		cur = conn.cursor()
+		sql = 'SELECT * FROM BOOK WHERE ID ='+str(b_id)
+		cur.execute(sql)
+		row = cur.fetchone()
+	return render_template('specific.html',row=row)
+
 
 @app.route('/api/v1/checkprime')
 def check_prime():
